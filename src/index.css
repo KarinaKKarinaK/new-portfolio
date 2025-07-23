@@ -19,6 +19,7 @@
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
   --animate-cursor-glow: cursor-glow 2s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 4s ease-in-out infinite;
 
   @keyframes float {
     0%,
@@ -67,6 +68,14 @@
     100% {
       transform: rotate(215deg) translateX(-500px);
       opacity: 0;
+    }
+  }
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
     }
   }
 }
