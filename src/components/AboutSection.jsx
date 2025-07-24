@@ -2,14 +2,13 @@ import { Code, User, Bot } from "lucide-react";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
-      {" "}
-      <div className="container mx-auto max-w-5xl">
+    <section id="about" className="py-24 px-8 md:px-12 lg:px-36 xl:px-40 relative">
+      <div className="container mx-auto max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           About <span className="text-primary">Me</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-26 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">AI/Software Developer</h3>
             <p className="text-muted-foreground">
