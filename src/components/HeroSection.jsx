@@ -72,29 +72,11 @@ export const HeroSection = () => {
 
             {/* Action Buttons Only */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1">
-              <a 
-                href="#contact" 
-                className="group relative overflow-hidden cosmic-button text-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Get In Touch
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <a href= "#contact" className="cosmic-button">
+                Contact Me
               </a>
-              
-              <a 
-                href="#projects" 
-                className="group px-6 py-3 rounded-full border-2 border-primary/30 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 text-center backdrop-blur-sm hover:backdrop-blur-md hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] relative overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  View Portfolio
-                  <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </span>
+              <a href="#contact" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                Download CV
               </a>
             </div>
           </div>

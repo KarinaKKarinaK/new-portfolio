@@ -22,19 +22,21 @@ export const StarBackground = () => {
 
   const generateStars = () => {
     const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 10000
+      (window.innerWidth * window.innerHeight) / 8000
     );
 
     const newStars = [];
+    const pulseTypes = ['animate-pulse-subtle', 'animate-pulse-bright', 'animate-pulse-slow'];
 
     for (let i = 0; i < numberOfStars; i++) {
       newStars.push({
         id: i,
-        size: Math.random() * 3 + 1,
+        size: Math.random() * 4 + 1.5, // Larger stars
         x: Math.random() * 100,
         y: Math.random() * 100,
-        opacity: Math.random() * 0.5 + 0.3,
-        animationDuration: Math.random() * 4 + 2,
+        opacity: Math.random() * 0.7 + 0.5, // Higher base opacity
+        animationDuration: Math.random() * 3 + 1.5, // Faster pulsing
+        pulseType: pulseTypes[Math.floor(Math.random() * pulseTypes.length)], // Random pulse animation
       });
     }
 
@@ -64,7 +66,7 @@ export const StarBackground = () => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className="star animate-pulse-subtle"
+          className={`star ${star.pulseType}`}
           style={{
             width: star.size + "px",
             height: star.size + "px",
