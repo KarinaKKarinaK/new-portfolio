@@ -96,70 +96,78 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-16 bg-background">
-      <div className="container mx-auto max-w-5xl">
+    <section id="projects" className="py-20 md:py-24 bg-background">
+      <div className="container mx-auto px-12 md:px-16 lg:px-24 xl:px-32 max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          {" "}
-          Featured <span className="text-primary"> Projects</span>
+          Featured <span className="text-primary">Projects</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
           Here are some of my recent projects. Each project is a unique solution
           to a problem or a creative endeavor that I am passionate about.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((projects, key) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 max-w-5xl mx-auto">
+          {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-border/20 hover:border-primary/20 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 max-w-xs mx-auto"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-36 overflow-hidden">
                 <img
-                  src={projects.image}
-                  alt={projects.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {projects.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-primary/20 text-secondary-foreground">
+              <div className="p-4">
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.tags.map((tag, index) => (
+                    <span 
+                      key={index}
+                      className="px-2 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{projects.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {projects.description}
+                <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-3 leading-relaxed">
+                  {project.description}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={projects.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={projects.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                <div className="flex justify-start items-center gap-3">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-foreground/70 hover:text-primary transition-colors duration-300 text-sm font-medium"
+                  >
+                    <ExternalLink size={16} />
+                    Demo
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-foreground/70 hover:text-primary transition-colors duration-300 text-sm font-medium"
+                  >
+                    <Github size={16} />
+                    Code
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
+        
+        <div className="text-center">
           <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="cosmic-button inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/KarinaKKarinaK"
           >
             Check My GitHub <ArrowRight size={16} />
@@ -169,4 +177,3 @@ export const ProjectsSection = () => {
     </section>
   );
 };
-// This is a placeholder for the Projects section. You can replace the example project card with actual
