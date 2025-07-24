@@ -1,38 +1,150 @@
 import {ArrowDown} from "lucide-react";
 import { Interactive3DShape } from "./Interactive3DShape";
+import { useEffect, useState } from "react";
 
 
 export const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    const handleMouseMove = (e) => {
+      setMousePosition({ 
+        x: (e.clientX / window.innerWidth) * 2 - 1,
+        y: (e.clientY / window.innerHeight) * 2 - 1
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("mousemove", handleMouseMove);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative pt-24 md:pt-20 overflow-hidden"
     >
-      {/* Interactive 3D Shape Background */}
-      <div className="absolute inset-0 z-0">
-        <Interactive3DShape />
-      </div>
+      {/* Enhanced Gradient Background */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: `
+            radial-gradient(ellipse 80% 50% at ${(mousePosition.x + 1) * 50}% ${(mousePosition.y + 1) * 50}%, 
+              rgba(139, 92, 246, 0.15) 0%, 
+              rgba(34, 197, 94, 0.1) 50%,
+              transparent 100%
+            )
+          `,
+          transition: 'background 0.5s ease-out',
+        }}
+      />
 
-      <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-glow">
-          Hi, I'm <span className="text-primary">Karina</span>
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-          A passionate developer creating amazing web experiences
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href= "#contact" className="cosmic-button">
-            Contact Me
-          </a>
-          <a href="#contact" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
-            Download CV
-          </a>
+      {/* Split Layout Container */}
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-center min-h-[80vh]">
+          
+          {/* Left Side - Minimal Text Content */}
+          <div 
+            className="flex flex-col justify-center space-y-8 lg:pr-8"
+            style={{
+              transform: `translateY(${scrollY * 0.1}px)`,
+            }}
+          >
+            {/* Main Heading Only */}
+            <div className="space-y-6 animate-fade-in">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+                <span className="block text-foreground/90 mb-4">Hi, I'm</span>
+                <span className="block bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent text-glow relative">
+                  Karina
+                  {/* Subtle glow effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent blur-sm opacity-50 -z-10">
+                    Karina
+                  </span>
+                </span>
+              </h1>
+            </div>
+
+            {/* Action Buttons Only */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1">
+              <a 
+                href="#contact" 
+                className="group relative overflow-hidden cosmic-button text-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Get In Touch
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              
+              <a 
+                href="#projects" 
+                className="group px-6 py-3 rounded-full border-2 border-primary/30 text-primary hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 text-center backdrop-blur-sm hover:backdrop-blur-md hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  View Portfolio
+                  <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side - Interactive 3D Shape */}
+          <div 
+            className="relative flex items-center justify-center lg:justify-end animate-fade-in-delay-2"
+            style={{
+              transform: `translateY(${scrollY * -0.05}px) translateX(${mousePosition.x * 5}px)`,
+            }}
+          >
+            {/* 3D Shape Container - Simplified */}
+            <div className="relative w-full max-w-lg h-96 lg:h-[500px] flex items-center justify-center">
+              <Interactive3DShape />
+              
+              {/* Minimal floating info cards - only keep the essential ones */}
+              <div className="absolute top-8 left-4 hidden lg:block animate-float" style={{animationDelay: '0.5s'}}>
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="text-sm text-primary font-semibold">React & AI</div>
+                  <div className="text-xs text-foreground/70">Modern Tech Stack</div>
+                  <div className="w-8 h-1 bg-gradient-to-r from-primary to-green-400 rounded-full mt-2"></div>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-12 right-8 hidden lg:block animate-float" style={{animationDelay: '1s'}}>
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="text-sm text-green-500 font-semibold">Creative Design</div>
+                  <div className="text-xs text-foreground/70">User Focused</div>
+                  <div className="w-8 h-1 bg-gradient-to-r from-green-400 to-primary rounded-full mt-2"></div>
+                </div>
+              </div>
+              
+              <div className="absolute top-1/3 -right-4 hidden xl:block animate-float" style={{animationDelay: '1.5s'}}>
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="text-sm text-purple-400 font-semibold">Innovation</div>
+                  <div className="text-xs text-foreground/70">Driven</div>
+                  <div className="w-8 h-1 bg-gradient-to-r from-purple-400 to-primary rounded-full mt-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Enhanced scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-10">
-        <span className="text-sm text-muted-foreground mb-2">Scroll</span>
-        <ArrowDown className="h-5 w-5 text-primary" />
+        <span className="text-xs text-foreground/50 mb-2 font-medium">Scroll to explore</span>
+        <div className="w-6 h-10 border-2 border-primary/40 rounded-full flex justify-center backdrop-blur-sm">
+          <div className="w-1 h-3 bg-gradient-to-b from-primary to-green-400 rounded-full mt-2 animate-pulse"></div>
+        </div>
       </div>
     </section>
   );
