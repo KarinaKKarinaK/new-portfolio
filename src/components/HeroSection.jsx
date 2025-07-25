@@ -57,10 +57,10 @@ export const HeroSection = () => {
             }}
           >
             {/* Main Heading Only */}
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-6 animate-fade-in text-center lg:text-left">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
-                <span className="block text-foreground/90 mb-4">Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent text-glow relative">
+                <span className="text-foreground/90">Hi, I'm </span>
+                <span className="bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent text-glow relative">
                   Karina
                   {/* Subtle glow effect */}
                   <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent blur-sm opacity-50 -z-10">
@@ -71,7 +71,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Action Buttons Only */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1 justify-center lg:justify-start">
               <a href= "#contact" className="cosmic-button">
                 Contact Me
               </a>
