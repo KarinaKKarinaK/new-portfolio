@@ -46,44 +46,12 @@ export const HeroSection = () => {
       />
 
       {/* Split Layout Container */}
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-center min-h-[80vh]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center justify-center min-h-[80vh] max-w-6xl mx-auto">
           
-          {/* Left Side - Minimal Text Content */}
+          {/* Left Side - Interactive 3D Shape */}
           <div 
-            className="flex flex-col justify-center space-y-8 lg:pr-8"
-            style={{
-              transform: `translateY(${scrollY * 0.1}px)`,
-            }}
-          >
-            {/* Main Heading Only */}
-            <div className="space-y-6 animate-fade-in text-center lg:text-left">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
-                <span className="text-foreground/90">Hi, I'm </span>
-                <span className="bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent text-glow relative">
-                  Karina
-                  {/* Subtle glow effect */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent blur-sm opacity-50 -z-10">
-                    Karina
-                  </span>
-                </span>
-              </h1>
-            </div>
-
-            {/* Action Buttons Only */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1 justify-center lg:justify-start">
-              <a href= "#contact" className="cosmic-button">
-                Contact Me
-              </a>
-              <a href="#contact" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
-                Download CV
-              </a>
-            </div>
-          </div>
-
-          {/* Right Side - Interactive 3D Shape */}
-          <div 
-            className="relative flex items-center justify-center lg:justify-end animate-fade-in-delay-2"
+            className="relative flex items-center justify-center lg:justify-start animate-fade-in-delay-2 order-2 lg:order-1"
             style={{
               transform: `translateY(${scrollY * -0.05}px) translateX(${mousePosition.x * 5}px)`,
             }}
@@ -116,6 +84,38 @@ export const HeroSection = () => {
                   <div className="w-8 h-1 bg-gradient-to-r from-purple-400 to-primary rounded-full mt-2"></div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Right Side - Minimal Text Content */}
+          <div 
+            className="flex flex-col justify-center space-y-8 lg:pl-8 order-1 lg:order-2"
+            style={{
+              transform: `translateY(${scrollY * 0.1}px)`,
+            }}
+          >
+            {/* Main Heading Only */}
+            <div className="space-y-6 animate-fade-in text-center lg:text-right">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+                <span className="text-foreground/90">Hi, I'm </span>
+                <span className="bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent text-glow relative">
+                  Karina
+                  {/* Subtle glow effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent blur-sm opacity-50 -z-10">
+                    Karina
+                  </span>
+                </span>
+              </h1>
+            </div>
+
+            {/* Action Buttons Only */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1 justify-center lg:justify-end">
+              <a href= "#contact" className="cosmic-button">
+                Contact Me
+              </a>
+              <a href="#contact" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                Download CV
+              </a>
             </div>
           </div>
         </div>
