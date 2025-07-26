@@ -89,14 +89,14 @@ export const HeroSection = () => {
 
           {/* Right Side - Minimal Text Content */}
           <div 
-            className="flex flex-col justify-center space-y-8 lg:pl-8 order-1 lg:order-2"
+            className="flex flex-col justify-center space-y-8 lg:pl-4 xl:pl-0 order-1 lg:order-2"
             style={{
               transform: `translateY(${scrollY * 0.1}px)`,
             }}
           >
             {/* Main Heading Only */}
-            <div className="space-y-6 animate-fade-in text-center lg:text-right">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+            <div className="space-y-6 animate-fade-in text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl lg:text-10xl xl:text-9xl 2xl:text-[9rem] font-bold leading-tight">
                 <span className="text-foreground/90">Hi, I'm </span>
                 <span className="bg-gradient-to-r from-primary via-purple-400 to-green-400 bg-clip-text text-transparent text-glow relative">
                   Karina
@@ -109,7 +109,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Action Buttons Only */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1 justify-center lg:justify-end">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-1 justify-center lg:justify-start">
               <a href= "#contact" className="cosmic-button">
                 Contact Me
               </a>
