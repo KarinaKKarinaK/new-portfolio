@@ -20,6 +20,7 @@
   --animate-meteor: meteor 5s linear infinite;
   --animate-cursor-glow: cursor-glow 2s ease-in-out infinite;
   --animate-gradient-shift: gradient-shift 4s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 8s linear infinite;
 
   @keyframes float {
     0%, 100% {
@@ -162,6 +163,15 @@
     }
     50% {
       box-shadow: 0 0 10px rgba(139, 92, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.5), 0 0 30px rgba(34, 197, 94, 0.3);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 }
@@ -359,6 +369,10 @@
 
   .animate-pulse-slow {
     animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
   }
 }
 
