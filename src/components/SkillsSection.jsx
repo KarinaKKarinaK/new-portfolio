@@ -147,13 +147,9 @@ export const SkillsSection = () => {
         
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My{' '}
-            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
-              Skills
-            </span>
-          </h2>
-          <div className="w-16 h-1 mx-auto bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 rounded-full"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            My <span className="text-primary"> Skills</span>
+        </h2>
         </div>
 
         {/* Category Filter */}
