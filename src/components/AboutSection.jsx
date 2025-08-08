@@ -19,7 +19,7 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about solving real problems with tech — from
+              I'm passionate about solving real problems with tech, from
               building AI agents to deploying full-stack solutions. Always
               learning, I explore cutting-edge tools to stay ahead in the
               fast-moving world of AI and software development.
