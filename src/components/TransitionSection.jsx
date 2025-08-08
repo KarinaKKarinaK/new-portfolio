@@ -100,7 +100,7 @@ export const TransitionSection = () => {
                 <div className="absolute -top-2 -right-2 w-2 h-2 bg-green-400/60 rounded-full animate-float"></div>
                 <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-green-300/40 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
               </div>
-              <h3 className="text-lg font-semibold text-foreground/90 mb-2">5+ Years Experience</h3>
+              <h3 className="text-lg font-semibold text-foreground/90 mb-2">4+ Years Experience</h3>
               <p className="text-sm text-foreground/60 leading-relaxed">Building scalable web applications and digital experiences</p>
             </div>
 
@@ -114,7 +114,7 @@ export const TransitionSection = () => {
                 <div className="absolute -top-1 -left-2 w-1.5 h-1.5 bg-blue-400/60 rounded-full animate-float" style={{animationDelay: '0.3s'}}></div>
                 <div className="absolute -bottom-2 -right-1 w-2 h-2 bg-blue-300/40 rounded-full animate-float" style={{animationDelay: '1.3s'}}></div>
               </div>
-              <h3 className="text-lg font-semibold text-foreground/90 mb-2">50+ Projects Completed</h3>
+              <h3 className="text-lg font-semibold text-foreground/90 mb-2">40+ Projects Completed</h3>
               <p className="text-sm text-foreground/60 leading-relaxed">Successful deliveries across various industries and platforms</p>
             </div>
 

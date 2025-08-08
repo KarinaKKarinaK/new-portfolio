@@ -4,28 +4,28 @@ import { cn } from "@/lib/utils";
 const skillsData = [
   // Frontend - Purple theme
   { name: "HTML/CSS", level: 95, category: "frontend", size: "large", priority: "high" },
-  { name: "JavaScript", level: 90, category: "frontend", size: "large", priority: "high" },
-  { name: "React", level: 90, category: "frontend", size: "large", priority: "high" },
+  { name: "JavaScript", level: 85, category: "frontend", size: "large", priority: "high" },
+  { name: "React", level: 85, category: "frontend", size: "large", priority: "high" },
   { name: "Vite", level: 85, category: "frontend", size: "medium", priority: "medium" },
   { name: "Tailwind CSS", level: 90, category: "frontend", size: "medium", priority: "medium" },
 
   // Backend - Blue theme
-  { name: "Python", level: 95, category: "backend", size: "large", priority: "high" },
-  { name: "Node.js", level: 80, category: "backend", size: "medium", priority: "medium" },
-  { name: "Express", level: 75, category: "backend", size: "medium", priority: "medium" },
+  { name: "Python", level: 90, category: "backend", size: "large", priority: "high" },
+  { name: "Node.js", level: 70, category: "backend", size: "medium", priority: "medium" },
+  { name: "Express", level: 70, category: "backend", size: "medium", priority: "medium" },
   { name: "PostgreSQL", level: 80, category: "backend", size: "medium", priority: "medium" },
   { name: "MongoDB", level: 70, category: "backend", size: "small", priority: "low" },
 
   // AI - Green theme
-  { name: "LangChain", level: 80, category: "ai", size: "medium", priority: "medium" },
-  { name: "n8n", level: 75, category: "ai", size: "medium", priority: "medium" },
+  { name: "LangChain", level: 70, category: "ai", size: "medium", priority: "medium" },
+  { name: "n8n", level: 70, category: "ai", size: "medium", priority: "medium" },
   { name: "RAG/KAG", level: 70, category: "ai", size: "small", priority: "low" },
   { name: "TensorFlow", level: 75, category: "ai", size: "medium", priority: "medium" },
-  { name: "PyTorch", level: 70, category: "ai", size: "small", priority: "low" },
+  { name: "PyTorch", level: 75, category: "ai", size: "small", priority: "low" },
 
   // Tools - Mixed theme
   { name: "Git/GitHub", level: 90, category: "tools", size: "large", priority: "high" },
-  { name: "Streamlit", level: 90, category: "tools", size: "medium", priority: "medium" },
+  { name: "Streamlit", level: 95, category: "tools", size: "medium", priority: "medium" },
   { name: "VS Code", level: 95, category: "tools", size: "large", priority: "high" },
   { name: "Figma", level: 80, category: "tools", size: "medium", priority: "medium" },
 ];
@@ -147,9 +147,13 @@ export const SkillsSection = () => {
         
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            My <span className="text-primary"> Skills</span>
-        </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            My{' '}
+            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
+              Skills
+            </span>
+          </h2>
+          <div className="w-16 h-1 mx-auto bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 rounded-full"></div>
         </div>
 
         {/* Category Filter */}
