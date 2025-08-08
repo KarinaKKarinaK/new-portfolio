@@ -2,7 +2,17 @@
 
 A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Features a beautiful star background animation, dark/light theme toggle, and multiple sections showcasing skills, projects, and contact information.
 
-## eatures
+## The Live Portfolio
+
+**[View Live Portfolio →](https://my-portfolio-wine-zeta-46.vercel.app/)**
+
+## Preview
+
+![Portfolio Screenshot](Screenshot%202025-08-08%20at%2018.29.02.png)
+
+*Modern dark theme with constellation-style sections and interactive elements*
+
+## Features
 
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **Theme Toggle**: Switch between dark and light modes with smooth transitions
@@ -80,13 +90,22 @@ To enable the contact form:
 
 ## Deployment
 
-Build the project for production:
+The project is deployed on Vercel and can be accessed at:
+**[https://my-portfolio-wine-zeta-46.vercel.app/](https://my-portfolio-wine-zeta-46.vercel.app/)**
 
+To deploy your own version:
+
+1. Build the project for production:
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist/` directory, ready for deployment to any static hosting service like Vercel, Netlify, or GitHub Pages.
+2. The built files will be in the `dist/` directory, ready for deployment to any static hosting service like Vercel, Netlify, or GitHub Pages.
+
+3. For Vercel deployment:
+   - Connect your GitHub repository to Vercel
+   - Configure environment variables in the Vercel dashboard
+   - Deploy automatically on each push to main branch
 
 ## License
 
